@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Clock,
   Mesh,
@@ -247,6 +247,7 @@ export default function FloatingLines({
   mixBlendMode = 'screen'
 }) {
   const containerRef = useRef(null);
+  const [failed, setFailed] = useState(false);
   const targetMouseRef = useRef(new Vector2(-1000, -1000));
   const currentMouseRef = useRef(new Vector2(-1000, -1000));
   const targetInfluenceRef = useRef(0);
@@ -279,6 +280,20 @@ export default function FloatingLines({
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    // WebGL 可用性检测：部分设备/隐私模式/低电量模式无法创建 WebGL，
+    // 此时直接降级为 CSS 背景，避免 three.js 抛异常导致整站崩溃
+    let testCtx = null;
+    try {
+      const canvas = document.createElement('canvas');
+      testCtx = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    } catch (e) {
+      testCtx = null;
+    }
+    if (!testCtx) {
+      setFailed(true);
+      return;
+    }
 
     let active = true;
 
@@ -478,6 +493,20 @@ export default function FloatingLines({
     parallax,
     parallaxStrength
   ]);
+
+  if (failed) {
+    // WebGL 不可用时的降级背景（深红渐变，视觉上接近暗红线条的底色）
+    return (
+      <div
+        className="floating-lines-container"
+        style={{
+          mixBlendMode: mixBlendMode,
+          background:
+            'radial-gradient(120% 90% at 50% 10%, rgba(58,10,7,0.85) 0%, rgba(31,5,4,0.9) 45%, rgba(10,2,2,1) 100%)'
+        }}
+      />
+    );
+  }
 
   return (
     <div
