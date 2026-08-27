@@ -526,6 +526,12 @@ img {
 .avatar .tilted-card-figure {
   max-width: 100%;
 }
+/* 头像完整显示：图片 800x1120（3:4 竖版），固定 440px 高会把头像上下裁切，改为按 3:4 比例自适应高度 */
+.avatar .tilted-card-inner,
+.avatar .tilted-card-img {
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+}
 .about-text p {
   color: var(--text-dim);
   font-size: 17px;
@@ -942,4 +948,7 @@ img {
   .title-mark { font-size: 22px; }
   .hero-footer { display: none; }
   .scroll-hint { display: none; }
+  /* 手机端隐藏 WarpText 画布（ogl 玻璃扭曲在 mobile 视口下文字位置会错位重叠），
+     保留 children 原版 HTML 文字（始终可见且清晰），桌面端效果不受影响 */
+  .warp-wrap canvas { display: none !important; }
 }
