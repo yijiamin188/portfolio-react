@@ -1,0 +1,42 @@
+/* 覆盖层模式：底层是原版 HTML 标题（排版完全不变），
+   WebGL 画布绝对定位叠加做玻璃扭曲。
+   底层永远完整显示：画布扭曲时底层柔化（不死藏），画布失败时底层原样可见。 */
+.warp-wrap {
+  position: relative;
+}
+
+/* 标题自带 margin 统一交给 wrapper 控制，保证画布与标题行盒精确对齐 */
+.warp-wrap > * {
+  margin: 0 !important;
+}
+
+/* 模块标题（个人经历/精选项目/个人优势）：替代原 .section-title 的 margin-top:14px */
+.warp-wrap.section-warp-wrap {
+  margin-top: 14px;
+}
+
+/* WebGL 画布：默认隐藏，渲染成功(is-enhanced)后显示并盖住底层标题 */
+.warp-wrap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 渲染成功后底层标题保持完全不透明(opacity 1)：
+   画布扭曲字与底层字位置精确对齐时 = 一个清晰文字(带玻璃感)；
+   画布偏移/失败时 = 原版标题清晰可见兜底。文字永不消失。 */
+
+.warp-wrap.is-enhanced canvas {
+  opacity: 1;
+}
+
+/* WebGL 彻底失败：画布绝不显示，底层原版标题 100% 可见 */
+.warp-wrap.is-failed canvas {
+  display: none;
+}
