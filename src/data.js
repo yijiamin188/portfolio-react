@@ -33,8 +33,8 @@ export const projects = [
     role: "后期制作 · 影视后期",
     tags: ["纪录片", "人物", "叙事", "调色"],
     desc: "这是一部记录海岛民警谢又辉的人物纪录片。二十年来，他远离家人，驻守孤岛，守护岛上渔民的平安。岛上毒蛇毒虫随处出没，海上执勤还要直面穷凶极恶的毒贩，每一次出警都危机四伏。每当岛民遭遇海上风浪遇险，他总是第一时间驾船出海开展救援。岛上的巡逻工作枯燥又漫长，一批又一批同事来了又离开，只有谢又辉选择默默坚守。影片用真实的镜头、克制的剪辑，展现出一位普通海岛民警，在孤独与险境之中，二十年如一日坚守的为民初心。",
-    video: "/works/xieyouhui.mp4",
-    cover: "/works/谢又辉封面.jpg",
+    video: "./works/xieyouhui.mp4",
+    cover: "./works/谢又辉封面.jpg",
   },
   {
     title: "惠州公安 110 微电影《作业本》",
@@ -42,8 +42,8 @@ export const projects = [
     role: "后期制作 · 影视后期",
     tags: ["微电影", "调色", "音乐铺设", "字幕"],
     desc: "《作业本》根据真实故事改编，讲述了一位老警察老何的从警一生。因为工作繁忙，他很少陪伴家人，屡屡缺席女儿小何的成长。起初小何满心委屈，并不理解父亲。直到亲眼目睹父亲与歹徒搏斗，满心都是对父亲的担忧。父女俩便约定，小何的作业留到父亲下班回家再检查。老何常常深夜才到家，此时女儿早已睡熟。他便悄悄拿起作业本仔细批改，改完放在桌上，日复一日，从未间断。岁月流转，老何迎来退休。而曾经那个等着爸爸改作业的小何，长大之后，如愿成为一名人民警察，接过父辈的使命，继续为人民服务。",
-    video: "/works/huicheng.mp4",
-    cover: "/works/作业本封面.jpg",
+    video: "./works/huicheng.mp4",
+    cover: "./works/作业本封面.jpg",
   },
   {
     title: "深圳公安第十六届警营开放日预告片",
@@ -51,8 +51,8 @@ export const projects = [
     role: "后期制作 · 影视后期",
     tags: ["预告片", "特效", "调色"],
     desc: "以“警民零距离”为主题，让民众了解警察的工作设备与日常。负责预告片的剪辑、特效、调色、音乐铺设、声音调整与字幕。",
-    video: "/works/jingying.mp4",
-    cover: "/works/警营开放日封面.jpg",
+    video: "./works/jingying.mp4",
+    cover: "./works/警营开放日封面.jpg",
   },
   {
     title: "目的地婚礼 · 影像MV",
@@ -60,17 +60,17 @@ export const projects = [
     role: "剪辑 · 调色",
     tags: ["婚礼", "纪实", "MV"],
     desc: "承接婚礼影像的剪辑与调色，保留真实情感的叙事节奏与质感，定格属于新人的高光时刻。",
-    video: "/works/hunli.mp4",
-    cover: "/works/婚礼封面.jpg",
+    video: "./works/hunli.mp4",
+    cover: "./works/婚礼封面.jpg",
   },
 ]
 
 // 个人优势
 export const strengths = [
-  { title: "叙事剪辑", desc: "擅长用镜头语言与节奏把控强化故事张力，尤其叙事类微电影、剧情短片。", icons: ["/logos/1.1叙事剪辑.png", "/logos/1.2叙事剪辑.png"] },
-  { title: "调色", desc: "熟练达芬奇与 Premiere 调色，建立统一影调，服务情绪与画面质感。", icons: ["/logos/2.调色.png"] },
-  { title: "音乐铺设", desc: "通过音乐情绪铺陈与声音调整，让画面与听觉形成合力。", icons: ["/logos/3.音乐铺设.png"] },
-  { title: "包装与特效", desc: "After Effects 包装、字幕与轻量特效，提升成片完成度。", icons: ["/logos/4.特效与包装.png"] },
-  { title: "全流程交付", desc: "从素材整理、粗剪、精剪到成片输出，具备独立闭环交付能力。", icons: ["/logos/5.全流程交付.png"] },
-  { title: "远程协作", desc: "适应项目制交付节奏，沟通高效，可按节点稳定推进。", icons: ["/logos/5.远程协作.png"] },
+  { title: "叙事剪辑", desc: "擅长用镜头语言与节奏把控强化故事张力，尤其叙事类微电影、剧情短片。", icons: ["./logos/1.1叙事剪辑.png", "./logos/1.2叙事剪辑.png"] },
+  { title: "调色", desc: "熟练达芬奇与 Premiere 调色，建立统一影调，服务情绪与画面质感。", icons: ["./logos/2.调色.png"] },
+  { title: "音乐铺设", desc: "通过音乐情绪铺陈与声音调整，让画面与听觉形成合力。", icons: ["./logos/3.音乐铺设.png"] },
+  { title: "包装与特效", desc: "After Effects 包装、字幕与轻量特效，提升成片完成度。", icons: ["./logos/4.特效与包装.png"] },
+  { title: "全流程交付", desc: "从素材整理、粗剪、精剪到成片输出，具备独立闭环交付能力。", icons: ["./logos/5.全流程交付.png"] },
+  { title: "远程协作", desc: "适应项目制交付节奏，沟通高效，可按节点稳定推进。", icons: ["./logos/5.远程协作.png"] },
 ]

@@ -24,7 +24,7 @@ export default function About() {
           <div className="about-grid">
             <div className="avatar">
               <TiltedCard
-                imageSrc="/avatar.jpg"
+                imageSrc="./avatar.jpg"
                 altText="易家敏"
                 captionText="易家敏 · 影视后期"
                 containerWidth="100%"

@@ -6,7 +6,7 @@ export default function Hero() {
     <header className="hero" id="home">
       {/* 全屏背景视频 */}
       <video className="hero-video" autoPlay muted loop playsInline>
-        <source src="/showreel.mp4" type="video/mp4" />
+        <source src="./showreel.mp4" type="video/mp4" />
       </video>
       <div className="hero-bg">
         <div className="hero-overlay" />
